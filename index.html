@@ -43,8 +43,30 @@ pattern="\d{10}|(\d{3}(\s|-|.)\d{3}(\s|-|.)\d{4})"
 
   *{
     box-sizing: border-box; /* ~~~~~~~ Box Sizing BORDER BOX ~~~~~~~ */
-    box-shadow: 10px 10px 8px 10px #888888; /* BOX SHADOW  h-offset v-offset blur spread color*/
+    box-shadow: 3px 3px 5px 0px #888888; /* BOX SHADOW  h-offset v-offset blur spread color*/
+    cursor: pointer; /* Change cursor hovering a clickable */
+    /*  */
   }
-  /*  */
+
+  input:focus {
+    outline: none; /* Removes black border when input-field is selected */
+  }
+
+  #modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* center it */
+    z-index: 10; /* draws popup above other items */
+  }
+  
+  #overlay { /* The transparent background around a popup */
+    position: fixed;
+    top: 0;  
+    left: 0;  /* stretch overlay to entire screen */
+    right: 0;
+    bottom: 0;
+    pointer-events: none; /* stops capturing events from the background */
+  }
 </style>
 
